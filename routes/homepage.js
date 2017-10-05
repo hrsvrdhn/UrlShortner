@@ -30,7 +30,7 @@ module.exports = {
 				data.shortCode = makeid();
 				for(var i in urldata) {
 					if(urldata[i].url.endsWith(data.url))
-						return res.render('home', { message : 'Success !' ,isget: false, link : siteUrl+urldata[i].shortCode});
+						return res.render('home', { message : 'Success !' ,isget: false, link : siteUrl+urldata[i].shortCode, hits: urldata[i].hits });
 					if(urldata[i].shortCode !== data.shortCode)
 						continue;
 					flag = true;
@@ -42,7 +42,7 @@ module.exports = {
 			urldata.save(function(err) {
 				if(err)
 					throw err;
-				res.render('home', { isget: false, message : 'Sucess !', link : siteUrl+urldata.shortCode});
+				res.render('home', { isget: false, message : 'Sucess !', link : siteUrl+urldata.shortCode , hits: urldata.hits});
 			});
 		});
 	},
@@ -52,6 +52,8 @@ module.exports = {
 			.then((data) => {
 				if(!data)
 					res.status(404).send("Not found!");
+				data.hits += 1;
+				data.save();
 				res.redirect(data.url);
 			})
 			.catch((err) => {
