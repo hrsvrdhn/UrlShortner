@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const path = require('path');
 var routes = require('./routes/index');
 var port = process.env.PORT || 3000;
-var config = require('./config');
+if(process.env.NODE_ENV !== 'production')
+	var config = require('./config');
 var app = express();
 
 mongoose.Promise = global.Promise;
