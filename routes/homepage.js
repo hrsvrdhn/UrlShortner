@@ -29,7 +29,7 @@ module.exports = {
 				flag = false;
 				data.shortCode = makeid();
 				for(var i in urldata) {
-					if(urldata[i].url == data.url)
+					if(urldata[i].url.endsWith(data.url))
 						return res.render('home', { message : 'Success !' ,isget: false, link : siteUrl+urldata[i].shortCode});
 					if(urldata[i].shortCode !== data.shortCode)
 						continue;
@@ -51,7 +51,7 @@ module.exports = {
 		UrlData.findOne({ shortCode : code}).exec()
 			.then((data) => {
 				if(!data)
-					res.json({ message : 'No url found'});
+					res.redirect('/');
 				res.redirect(data.url);
 			})
 			.catch((err) => {
