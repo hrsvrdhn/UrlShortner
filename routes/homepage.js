@@ -17,7 +17,7 @@ module.exports = {
 	post: function(req, res) {
 		var siteUrl = "";
 		if(process.env.NODE_ENV === 'production')
-			siteUrl = "https://hrsvrdhn.herokuapp.com/";
+			siteUrl = "hrsvrdhn.herokuapp.com/";
 		else
 			siteUrl = "localhost:3000/";
 		var data = req.body;

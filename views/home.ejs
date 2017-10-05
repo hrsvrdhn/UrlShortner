@@ -33,28 +33,23 @@
   				<% if(isget) { %>
 				<form method="POST" action='.'> 
 					<input class='form-control' type="text" name="url" placeholder="Enter URL">
-					<input class='btn btn-primary' type='submit' value='Shorten &raquo'>
+					<button type="submit" class="btn btn-primary" style="margin-top: 20px">Shorten &raquo</button>
 				</form>
 				<% } %>
   				<% if(!isget) { %>
-  					
-  								<div class="alert alert-success" role="alert">
-
-  <p><a href="<%= link %>" class="alert-link"><%= link %></a></p>
-  <p>Hits : <%= hits %></p>
-</div>
+  					<div class="alert alert-success" role="alert">
+					<p><a href="<%= link %>" class="alert-link" target="_blank"><%= link %></a></p>
+  					<p>Hits : <%= hits %></p>
+				</div>
 				<% } %>
-
+				<p style="color: White"><a href="https://github.com/hrsvrdhn/UrlShortner" href="_blank">See the code</a></p>
 			</div>
 				</div>
 
           </div>
-
-
         </div>
 
       </div>
-
     </div>
 	</body>
 </html>
