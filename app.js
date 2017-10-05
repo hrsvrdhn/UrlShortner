@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 var routes = require('./routes/index');
-
+var port = process.env.PORT || 3000;
 var app = express();
 
 mongoose.Promise = global.Promise;
@@ -17,4 +17,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 routes(app);
 
-app.listen(3000);
+app.listen(port);
+console.log("The node is running on " +port);
