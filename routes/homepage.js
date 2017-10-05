@@ -17,7 +17,7 @@ module.exports = {
 	post: function(req, res) {
 		var siteUrl = "";
 		if(process.env.NODE_ENV === 'production')
-			siteUrl = "hrsvrdhn.herokuapp.com/";
+			siteUrl = "https://hrsvrdhn.herokuapp.com/";
 		else
 			siteUrl = "localhost:3000/";
 		var data = req.body;
@@ -51,11 +51,14 @@ module.exports = {
 		UrlData.findOne({ shortCode : code}).exec()
 			.then((data) => {
 				if(!data)
-					res.redirect('/');
+					res.status(404).send("Not found!");
 				res.redirect(data.url);
 			})
 			.catch((err) => {
-				res.json(err);
+				res.status(404).send("Error");
 			});
+	},
+	sampleredirect : function(req, res) {
+		res.redirect('http://google.com');
 	}
 };
