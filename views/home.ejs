@@ -1,55 +1,95 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title> xhml.ml | Shorten the URL </title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<link href="http://getbootstrap.com/examples/cover/cover.css" rel="stylesheet"> 
-	</head>
-	<style>
-		body {
-			background-color: #226268;
-			background-image: url("https://media-cdn.tripadvisor.com/media/photo-o/0e/35/af/30/kashmir-valley-travels.jpg");
-			background-size: cover ;
-		}
-		.btn-link {
-			color : #50dfec;
-			text-shadow : none ;
-		}
-		.btn-link:hover {
-			color : #000000;
-		}
-	</style>
-	<body>
-		 <div class="site-wrapper">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> xhml.ml | Shorten the URL</title>
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
+    <style>
+    body {
+      background-color: #226268;
+      background-image: url("https://media-cdn.tripadvisor.com/media/photo-o/0e/35/af/30/kashmir-valley-travels.jpg");
+      background-size: cover ;
+
+    }
+    img {
+    width: 100%;
+    height: auto;
+}
+    .btn-link {
+      color : #50dfec;
+      text-shadow : none ;
+    }
+    .btn-link:hover {
+      color : #000000;
+    }
+    a , a:hover {
+      color: White;
+    }
+    
+  </style>
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
 
       <div class="site-wrapper-inner">
 
         <div class="cover-container">
-     
-          <div class="inner cover">
-  			<div class='container text-center' style="padding-top: 270px">
-					<h1 class="cover-heading" style="color: White"><%= message %></h1>
-  					<div class="col-sm-6 col-sm-offset-3">
-  				<% if(isget) { %>
-				<form method="POST" action='.'> 
-					<input class='form-control' type="text" name="url" placeholder="Enter URL">
-					<button type="submit" class="btn btn-primary" style="margin-top: 20px">Shorten &raquo</button>
-				</form>
-				<% } %>
-  				<% if(!isget) { %>
-  					<div class="alert alert-success" role="alert">
-					<p><a href="<%= link %>" class="alert-link" target="_blank"><%= link %></a></p>
-  					<p>Hits : <%= hits %></p>
-				</div>
-				<% } %>
-				<p style="color: White"><a href="https://github.com/hrsvrdhn/UrlShortner" href="_blank">See the code</a></p>
-			</div>
-				</div>
 
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand">XHML</h3>
+              
+              </nav>
+            </div>
           </div>
+
+          <div class="inner cover">
+            <h1 class="cover-heading"><%= message %></h1>
+            <p class="lead">
+              <% if(isget) { %>
+        <form method="POST" action='.'> 
+          <input class='form-control' type="text" name="url" placeholder="Enter URL">
+          <button type="submit" class="btn btn-primary" style="margin-top: 20px">Shorten &raquo</button>
+        </form>
+        <% } %>
+          <% if(!isget) { %>
+            <div class="alert alert-success" role="alert">
+          <p><a href="<%= link %>" class="alert-link" target="_blank"><%= link %></a></p>
+            <p>Hits : <%= hits %></p>
+        </div>
+        <% } %>
+            </p>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+             <strong><p>Made by <a href="https://github.com/hrsvrdhn">Harsh Vardhan Sharma</a>, clone the code from <a href="https://github.com/hrsvrdhn/UrlShortner">here</a>.</p></strong>
+            </div>
+          </div>
+
         </div>
 
       </div>
+
     </div>
-	</body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
 </html>
