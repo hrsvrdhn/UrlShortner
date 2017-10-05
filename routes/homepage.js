@@ -57,8 +57,5 @@ module.exports = {
 			.catch((err) => {
 				res.status(404).send("Error");
 			});
-	},
-	sampleredirect : function(req, res) {
-		res.redirect('http://google.com');
 	}
 };

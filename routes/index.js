@@ -5,5 +5,4 @@ module.exports = function(app) {
 	app.get('/', homepage.get);
 	app.post('/', homepage.post);
 	app.get('/:shortCode', homepage.urlredirect);
-	app.get('/hello', homepage.sampleredirect);
 };
