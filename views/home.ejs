@@ -28,7 +28,7 @@
      
           <div class="inner cover">
   			<div class='container text-center' style="padding-top: 270px">
-					<h1 class="cover-heading" style="color: White">Shorten the URL</h1>
+					<h1 class="cover-heading" style="color: White"><%= message %></h1>
   					<div class="col-sm-6 col-sm-offset-3">
   				<% if(isget) { %>
 				<form method="POST" action='.'> 
@@ -37,11 +37,14 @@
 				</form>
 				<% } %>
   				<% if(!isget) { %>
-  					<p><%= urldata.url %></p>
-  					<a href="http://localhost:3000/<%= urldata.shortCode %>">http://localhost:3000/<%= urldata.shortCode %></a>
+  					
+  								<div class="alert alert-success" role="alert">
+
+  <p><a href="<%= link %>" class="alert-link"><%= link %></a></p>
+</div>
 				<% } %>
+
 			</div>
-				</p>
 				</div>
 
           </div>

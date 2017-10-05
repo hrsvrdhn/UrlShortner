@@ -12,9 +12,14 @@ var makeid = function() {
 
 module.exports = {
 	get: function(req, res) {
-		res.render('home', { isget : true });
+		res.render('home', { isget : true , message : 'Shorten your URL'});
 	},
 	post: function(req, res) {
+		var siteUrl = "";
+		if(process.env.NODE_ENV === 'production')
+			siteUrl = "hrsvrdhn.herokuapp.com/";
+		else
+			siteUrl = "localhost:3000/";
 		var data = req.body;
 		UrlData.find().exec()
 		.then((urldata) => {
@@ -25,7 +30,7 @@ module.exports = {
 				data.shortCode = makeid();
 				for(var i in urldata) {
 					if(urldata[i].url == data.url)
-						res.render('home', { isget: false, urldata : urldata[i]});
+						return res.render('home', { message : 'Success !' ,isget: false, link : siteUrl+urldata[i].shortCode});
 					if(urldata[i].shortCode !== data.shortCode)
 						continue;
 					flag = true;
@@ -37,7 +42,7 @@ module.exports = {
 			urldata.save(function(err) {
 				if(err)
 					throw err;
-				res.render('home', { isget: false, urldata : urldata});
+				res.render('home', { isget: false, message : 'Sucess !', link : siteUrl+urldata.shortCode});
 			});
 		});
 	},
