@@ -9,7 +9,7 @@ if(process.env.NODE_ENV !== 'production')
 var app = express();
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASE_URL || config.development.database);
+mongoose.connect(process.env.DATABASE_URL || config.development.database, { useMongoClient : true });
 
 app.set("views", path.join(__dirname, "views"))
 app.set("view engine", "ejs")

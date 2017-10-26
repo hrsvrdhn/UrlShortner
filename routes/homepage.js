@@ -59,5 +59,38 @@ module.exports = {
 			.catch((err) => {
 				res.status(404).send("Error");
 			});
+	},
+
+	apipost: function(req, res) {
+		var siteUrl = "";
+		if(process.env.NODE_ENV === 'production')
+			siteUrl = "xhml.ml/";
+		else
+			siteUrl = "localhost:3000/";
+		var data = req.body;
+		UrlData.find().exec()
+		.then((urldata) => {
+			data.shortCode = makeid();
+			var flag = true;
+			while(flag) {
+				flag = false;
+				data.shortCode = makeid();
+				for(var i in urldata) {
+					if(urldata[i].url.endsWith(data.url))
+						return res.json( { error : false, data } );
+					if(urldata[i].shortCode !== data.shortCode)
+						continue;
+					flag = true;
+				}
+			}
+			if(!(data.url.startsWith('http://') || data.url.startsWith('https://')))
+				data.url = 'http://' + data.url;
+			var urldata = new UrlData(data);
+			urldata.save(function(err) {
+				if(err)
+					return res.json({ error : true })
+				return res.json( { error: false, data } );
+			});
+		});
 	}
 };
