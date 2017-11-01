@@ -77,7 +77,7 @@ module.exports = {
 				data.shortCode = makeid();
 				for(var i in urldata) {
 					if(urldata[i].url.endsWith(data.url))
-						return res.json( { error : false, data } );
+						return res.json( { error : false, data: urldata[i] } );
 					if(urldata[i].shortCode !== data.shortCode)
 						continue;
 					flag = true;
