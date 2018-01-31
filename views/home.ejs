@@ -1,59 +1,39 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
     <title> xhml.ml | Shorten the URL</title>
 
-    <!-- Bootstrap core CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-    <!-- Custom styles for this template -->
-    <link href="https://getbootstrap.com/docs/4.0/examples/cover/cover.css" rel="stylesheet">
-    <style>
-    body {
-      background-color: #226268;
-      background-image: url("https://media-cdn.tripadvisor.com/media/photo-o/0e/35/af/30/kashmir-valley-travels.jpg");
-      background-size: cover ;
-
-    }
-    img {
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+</head>
+<style>
+  body {
+    background-color: #226268;
+    background-image: url("http://hdwallpapersrocks.com/wp-content/uploads/2016/05/Shine-beautiful-abstract-background-wallpapers.jpg");
+    background-size: cover;
+    color: white;
+  }
+  img {
     width: 100%;
     height: auto;
-}
-    .btn-link {
-      color : #50dfec;
-      text-shadow : none ;
-    }
-    .btn-link:hover {
-      color : #000000;
-    }
-    a , a:hover {
-      color: White;
-    }
-    
-  </style>
-  </head>
+  }
 
-  <body>
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">XHML</h3>
-              
-              </nav>
-            </div>
-          </div>
-
-          <div class="inner cover">
-            <h1 class="cover-heading"><%= message %></h1>
+     
+</style>
+<body>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">XHML</h1>
+      <div class="row center">
+        <h4 class="header col s12 light">URL Shortener</</h4>
+      </div>
+      <div class="row center">
+        <div class="col s6 offset-s3">
             <p class="lead">
               <% if(isget) { %>
         <form method="POST" action='.'> 
@@ -62,31 +42,33 @@
         </form>
         <% } %>
           <% if(!isget) { %>
-            <div class="alert alert-success" role="alert">
-          <p><a href="http://<%= link %>" class="alert-link" target="_blank"><%= link %></a></p>
-            <p>Hits : <%= hits %></p>
-        </div>
+           <div class="card green accent-1">
+              <div class="card-content green-text">
+                <span class="card-title green-text"><b><%= message %></b></span>
+                <p><a href="http://<%= link %>" class="alert-link" target="_blank"><h5><%= link %></h5></a></p>
+                </div>
+                <div class="card-action green-text">
+                  <p>Hits : <%= hits %></p>
+                </div>
+              </div>
         <% } %>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner" style="position: absolute;bottom: 0px;">
-             <strong><p>Made by <a href="https://github.com/hrsvrdhn">Harsh Vardhan Sharma</a>, clone the code from <a href="https://github.com/hrsvrdhn/UrlShortner">here</a>.</p></strong>
-            </div>
-          </div>
-
+          </p>
         </div>
-
       </div>
-
+      <br><br>
     </div>
+  </div>
+  <footer class="page-footer transparent" style="position:fixed;bottom:0;left:0;width:100%;">
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="white-text text-darken-3" href="https://github.com/hrsvrdhn"><b>Harsh Vardhan Sharma</b></a>, clone the code from <a href="https://github.com/hrsvrdhn/UrlShortner"><b class="white-text">here</b></a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
   </body>
 </html>
