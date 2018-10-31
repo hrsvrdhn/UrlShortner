@@ -1,68 +1,74 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title> xhml.ml | Shorten the URL</title>
+  
+  <head>
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+      <title> xhml.ml | Shorten the URL</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
-</head>
-<style>
-  body {
-    background-color: #226268;
-    background-image: url("http://hdwallpapersrocks.com/wp-content/uploads/2016/05/Shine-beautiful-abstract-background-wallpapers.jpg");
-    color: white;
-  }
-     
-</style>
-<body>
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">XHML</h1>
-      <div class="row center">
-        <h4 class="header col s12 light">URL Shortener</</h4>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+    
+  </head>
+
+  <style>
+  
+    body {
+      background-color: #226268;
+      background-image: url("http://hdwallpapersrocks.com/wp-content/uploads/2016/05/Shine-beautiful-abstract-background-wallpapers.jpg");
+      color: white;
+    }     
+    
+  </style>
+  <body>
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <br><br>
+        <h1 class="header center orange-text">XHML</h1>
+        <div class="row center">
+          <h4 class="header col s12 light">URL Shortener</</h4>
+        </div>
+        <div class="row center">
+          <div class="col s12 l6 offset-l3">
+              <p class="lead">
+                <% if(isget) { %>
+          <form method="POST" action='.'> 
+            <input class='form-control' type="text" name="url" placeholder="Enter URL">
+            <button type="submit" class="btn btn-primary" style="margin-top: 20px">Shorten &raquo</button>
+          </form>
+          <% } %>
+            <% if(!isget) { %>
+             <div class="card green accent-1">
+                <div class="card-content green-text">
+                  <span class="card-title green-text"><b><%= message %></b></span>
+                  <p><a href="http://<%= link %>" class="alert-link" target="_blank"><h5><%= link %></h5></a></p>
+                  </div>
+                  <div class="card-action green-text">
+                    <p>Hits : <%= hits %></p>
+                  </div>
+                </div>
+          <% } %>
+            </p>
+          </div>
+        </div>
+        <br><br>
       </div>
-      <div class="row center">
-        <div class="col s12 l6 offset-l3">
-            <p class="lead">
-              <% if(isget) { %>
-        <form method="POST" action='.'> 
-          <input class='form-control' type="text" name="url" placeholder="Enter URL">
-          <button type="submit" class="btn btn-primary" style="margin-top: 20px">Shorten &raquo</button>
-        </form>
-        <% } %>
-          <% if(!isget) { %>
-           <div class="card green accent-1">
-              <div class="card-content green-text">
-                <span class="card-title green-text"><b><%= message %></b></span>
-                <p><a href="http://<%= link %>" class="alert-link" target="_blank"><h5><%= link %></h5></a></p>
-                </div>
-                <div class="card-action green-text">
-                  <p>Hits : <%= hits %></p>
-                </div>
-              </div>
-        <% } %>
-          </p>
+    </div>
+    
+    <footer class="page-footer transparent" style="position:fixed;bottom:0;left:0;width:100%;">
+      <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="white-text text-darken-3" href="https://github.com/hrsvrdhn"><b>Harsh Vardhan Sharma</b></a>, clone the code from <a href="https://github.com/hrsvrdhn/UrlShortner"><b class="white-text">here</b></a>
         </div>
       </div>
-      <br><br>
-    </div>
-  </div>
-  <footer class="page-footer transparent" style="position:fixed;bottom:0;left:0;width:100%;">
-    <div class="footer-copyright">
-      <div class="container">
-      Made by <a class="white-text text-darken-3" href="https://github.com/hrsvrdhn"><b>Harsh Vardhan Sharma</b></a>, clone the code from <a href="https://github.com/hrsvrdhn/UrlShortner"><b class="white-text">here</b></a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
-  </body>
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
+   </body>
 </html>
